@@ -177,43 +177,61 @@ header::after {
   }
 }
 
+header:has(> img) {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
 header img {
-  width: 76px;
-  height: 76px;
-  margin-bottom: 20px;
+  flex: none;
+  width: 132px;
+  height: 132px;
   object-fit: cover;
-  border-radius: 50%;
-  border: 1px solid var(--line-strong);
+  border: 4px solid #0a0a0b;
+  border-radius: 14px;
+  background: #1f1f23;
+  box-shadow: 0 4px 32px #0004;
 }
 
 header h1 {
-  margin-bottom: 8px;
-  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  margin: 0 0 4px;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   font-weight: 700;
+  letter-spacing: -0.04em;
   color: var(--title);
 }
 
 header p {
-  margin-bottom: 6px;
-  font-size: 15px;
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
-header p:last-of-type,
-header p a {
+header:has(> img) p:last-of-type,
+header:has(> img) p a {
   font-family: var(--mono);
-  font-size: 13px;
+  color: #b4b4b4;
 }
 
-header p a {
-  color: var(--text-2);
+header:has(> img) p a {
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+header:has(> img) p a:hover {
+  color: var(--title);
   text-decoration: underline;
-  text-underline-offset: 3px;
+}
+
+header:has(> img) p:last-of-type {
+  font-size: 0.8rem;
 }
 
 #clock {
   font-family: var(--mono);
-  font-size: 13px;
-  color: var(--text-2);
 }
 
 section {
@@ -511,6 +529,21 @@ footer p:first-child:not(:last-child) {
 
   header {
     padding-top: 36px;
+  }
+
+  header:has(> img) {
+    gap: 14px;
+  }
+
+  header:has(> img) img {
+    width: 88px;
+    height: 88px;
+    border-width: 3px;
+    border-radius: 10px;
+  }
+
+  header:has(> img) h1 {
+    font-size: 1.5rem;
   }
 
   section > div {
