@@ -47,6 +47,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 1px;
+  background: var(--pattern-fg);
+  pointer-events: none;
+}
+
+body::before {
+  left: max(16px, calc(50% - 350px));
+}
+
+body::after {
+  right: max(16px, calc(50% - 350px));
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -151,7 +171,7 @@ header::before {
   right: 0;
   width: 32%;
   z-index: -1;
-  border-inline: 1px solid var(--line);
+  border-inline: 1px solid var(--pattern-fg);
   background: repeating-linear-gradient(315deg, var(--pattern-fg) 0, var(--pattern-fg) 1px, transparent 0, transparent 50%);
   background-size: 10px 10px;
   display: none;
@@ -259,6 +279,10 @@ section::before {
   background: var(--line);
 }
 
+section:has(> article)::before {
+  top: -12px;
+}
+
 section:first-of-type::before {
   display: none;
 }
@@ -287,6 +311,7 @@ section > h3 {
 
 section:has(> article) {
   position: relative;
+  margin-top: 12px;
   margin-bottom: 24px;
   background:
     linear-gradient(var(--bracket), var(--bracket)) top left / 8px 2px,
@@ -576,6 +601,11 @@ footer p:first-child:not(:last-child) {
 }
 
 @media (max-width: 768px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+
   header:has(> img) {
     gap: 14px;
   }
