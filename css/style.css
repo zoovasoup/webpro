@@ -16,6 +16,8 @@
   --muted-2: #888;
   --dim: #555;
   --hover: #ffffff05;
+  --pattern-fg: #ffffff1a;
+  --pattern-dim: #ffffff0d;
   --sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
   --maxw: 62rem;
@@ -116,8 +118,39 @@ section {
 }
 
 header {
+  position: relative;
   padding: 56px 0 32px;
-  border-bottom: 1px solid var(--line);
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 32%;
+  z-index: -1;
+  border-inline: 1px solid var(--line);
+  background: repeating-linear-gradient(315deg, var(--pattern-fg) 0, var(--pattern-fg) 1px, transparent 0, transparent 50%);
+  background-size: 10px 10px;
+  display: none;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: var(--line);
+}
+
+@media (min-width: 768px) {
+  header::before {
+    display: block;
+  }
 }
 
 header img {
@@ -160,7 +193,23 @@ header p a {
 }
 
 section {
-  padding: 8px 0;
+  position: relative;
+  padding: 24px 0;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: var(--line);
+}
+
+section:first-of-type::before {
+  display: none;
 }
 
 section > h2 {
@@ -188,7 +237,6 @@ section > h3 {
 section:has(> article) {
   position: relative;
   margin-bottom: 24px;
-  border: 1px solid var(--line);
   background:
     linear-gradient(var(--bracket), var(--bracket)) top left / 8px 2px,
     linear-gradient(var(--bracket), var(--bracket)) top left / 2px 8px,
