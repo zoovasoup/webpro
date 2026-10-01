@@ -158,3 +158,174 @@ header p a {
   font-size: 13px;
   color: var(--text-2);
 }
+
+section {
+  padding: 8px 0;
+}
+
+section > h2 {
+  display: inline-block;
+  margin: 32px 0 16px;
+  padding: 4px 12px;
+  background: var(--surface-3);
+  border-radius: 2px;
+  box-shadow: 0 4px 24px -8px #0006;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+section > h3 {
+  margin: 24px 0 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted-2);
+}
+
+section:has(> article) {
+  position: relative;
+  margin-bottom: 24px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(var(--bracket), var(--bracket)) top left / 8px 2px,
+    linear-gradient(var(--bracket), var(--bracket)) top left / 2px 8px,
+    linear-gradient(var(--bracket), var(--bracket)) top right / 8px 2px,
+    linear-gradient(var(--bracket), var(--bracket)) top right / 2px 8px,
+    linear-gradient(var(--bracket), var(--bracket)) bottom left / 8px 2px,
+    linear-gradient(var(--bracket), var(--bracket)) bottom left / 2px 8px,
+    linear-gradient(var(--bracket), var(--bracket)) bottom right / 8px 2px,
+    linear-gradient(var(--bracket), var(--bracket)) bottom right / 2px 8px;
+  background-repeat: no-repeat;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 14px 12px;
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.15s ease;
+}
+
+article:last-of-type {
+  border-bottom: none;
+}
+
+article:hover {
+  background: var(--hover);
+}
+
+article h3 {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+article:hover h3 {
+  color: var(--title);
+}
+
+article p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+article ul {
+  display: grid;
+  gap: 4px;
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+article img {
+  margin-bottom: 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+article a {
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: var(--surface-2);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--title);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+article a:hover {
+  background: #2a2b2c;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+section > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+section > div span {
+  padding: 10px 14px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-2);
+  transition: background-color 0.15s ease;
+}
+
+section > div span:hover {
+  background: #ffffff0a;
+}
+
+section:has(> a) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+section:has(> a) > h2 {
+  width: 100%;
+}
+
+section > a,
+section > ul li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--surface-2);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--title);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+section > a:hover,
+section > ul li a:hover {
+  background: #2a2b2c;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+section > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
