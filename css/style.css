@@ -431,8 +431,9 @@ article a:hover {
 
 section > div {
   overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  margin-bottom: 10px;
+  mask-image: linear-gradient(90deg, #0000, #000 8% 92%, #0000);
+  -webkit-mask-image: linear-gradient(90deg, #0000, #000 8% 92%, #0000);
 }
 
 section > div > div {
@@ -453,21 +454,17 @@ section > div > div > div {
 
 section > div span {
   flex: none;
-  padding: 6px 16px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
   font-family: var(--sans);
   font-size: 0.9rem;
+  font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: capitalize;
   color: #e5e5e5;
   white-space: nowrap;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition: color 0.2s ease;
 }
 
 section > div span:hover {
-  border-color: var(--muted-2);
   color: var(--title);
 }
 
@@ -608,10 +605,6 @@ footer p:first-child:not(:last-child) {
     font-size: 1.15rem;
   }
 
-  section > div {
-    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
-  }
-
   section:has(> article > img) {
     gap: 12px;
     padding: 10px;
@@ -625,7 +618,7 @@ footer p:first-child:not(:last-child) {
 
   section:has(> article > img) article img {
     width: 100%;
-    height: 170px;
+    height: 160px;
   }
 
   label {
