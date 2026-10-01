@@ -54,17 +54,18 @@ body::after {
   top: 0;
   bottom: 0;
   z-index: 5;
-  width: 1px;
-  background: var(--pattern-fg);
+  width: min(40px, calc((100% - 700px) / 2));
+  border-inline: 1px solid var(--pattern-fg);
+  background: repeating-linear-gradient(315deg, var(--pattern-fg) 0, var(--pattern-fg) 1px, transparent 0, transparent 50%) 0 0 / 10px 10px;
   pointer-events: none;
 }
 
 body::before {
-  left: max(16px, calc(50% - 350px));
+  right: calc(50% + 350px);
 }
 
 body::after {
-  right: max(16px, calc(50% - 350px));
+  left: calc(50% + 350px);
 }
 
 ::-webkit-scrollbar {
