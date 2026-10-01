@@ -20,7 +20,7 @@
   --pattern-dim: #ffffff0d;
   --sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
-  --maxw: 700px;
+  --maxw: 664px;
 }
 
 *,
@@ -168,7 +168,7 @@ header::before {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
+  right: -18px;
   width: 32%;
   z-index: -1;
   border-inline: 1px solid var(--pattern-fg);
