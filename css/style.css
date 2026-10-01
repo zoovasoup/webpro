@@ -342,43 +342,64 @@ article img {
 }
 
 section:has(> article > img) {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  gap: 8px;
-  padding: 8px;
-  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 8px;
   background:
     radial-gradient(var(--pattern-fg) 1px, transparent 0) 0 0 / 10px 10px,
-    #ffffff0f;
+    #ffffff0a;
+  box-shadow: inset 0 0 0 1px var(--line);
 }
 
 section:has(> article > img) article {
-  padding: 8px;
-  border: 0;
-  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 18px;
+  border: 1.5px dashed var(--line-dashed);
+  border-radius: 4px;
   background: var(--bg);
-  outline: 1px solid var(--line);
-  outline-offset: -1px;
+  transition: border-color 0.15s ease;
 }
 
 section:has(> article > img) article:hover {
-  background: #101315;
-  outline-color: var(--line-strong);
+  background: var(--bg);
+  border-color: var(--muted-2);
+}
+
+section:has(> article > img) article:last-of-type {
+  border-bottom: 1.5px dashed var(--line-dashed);
+}
+
+section:has(> article > img) article > div {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 section:has(> article > img) article img {
-  margin-bottom: 8px;
+  flex: none;
+  width: 220px;
+  height: 140px;
+  margin: 0;
   border: 0;
-  border-radius: 12px;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px -4px #0006;
+}
+
+section:has(> article > img) article h3 {
+  font-size: 1rem;
 }
 
 section:has(> article > img) article h3,
 section:has(> article > img) article p {
-  margin-inline: 8px;
-}
-
-section:has(> article > img) article a {
-  margin-left: 8px;
+  margin: 0;
 }
 
 article a {
@@ -548,6 +569,22 @@ footer p:first-child:not(:last-child) {
 
   section > div {
     grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+  }
+
+  section:has(> article > img) {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  section:has(> article > img) article {
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  section:has(> article > img) article img {
+    width: 100%;
+    height: 170px;
   }
 
   label {
