@@ -157,6 +157,7 @@ header,
 section {
   width: min(var(--maxw), 100% - 32px);
   margin-inline: auto;
+  padding: 32px;
 }
 
 header {
@@ -314,6 +315,7 @@ section:has(> article) {
   position: relative;
   margin-top: 12px;
   margin-bottom: 24px;
+  padding: 24px 18px;
   background:
     linear-gradient(var(--bracket), var(--bracket)) top left / 8px 2px,
     linear-gradient(var(--bracket), var(--bracket)) top left / 2px 8px,
@@ -634,6 +636,10 @@ footer p:first-child:not(:last-child) {
 
   header:has(> img) h1 {
     font-size: 1.15rem;
+  }
+
+  section:has(> article) {
+    padding: 20px 12px;
   }
 
   section:has(> article > img) {
