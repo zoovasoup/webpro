@@ -299,6 +299,46 @@ article img {
   border-radius: 4px;
 }
 
+section:has(> article > img) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 8px;
+  padding: 8px;
+  border-radius: 16px;
+  background:
+    radial-gradient(var(--pattern-fg) 1px, transparent 0) 0 0 / 10px 10px,
+    #ffffff0f;
+}
+
+section:has(> article > img) article {
+  padding: 8px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--bg);
+  outline: 1px solid var(--line);
+  outline-offset: -1px;
+}
+
+section:has(> article > img) article:hover {
+  background: #101315;
+  outline-color: var(--line-strong);
+}
+
+section:has(> article > img) article img {
+  margin-bottom: 8px;
+  border: 0;
+  border-radius: 12px;
+}
+
+section:has(> article > img) article h3,
+section:has(> article > img) article p {
+  margin-inline: 8px;
+}
+
+section:has(> article > img) article a {
+  margin-left: 8px;
+}
+
 article a {
   align-self: flex-start;
   margin-top: 10px;
