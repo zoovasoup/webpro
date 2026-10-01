@@ -80,3 +80,81 @@ a:hover {
   outline: 1px solid var(--bracket);
   outline-offset: 2px;
 }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 16px;
+  background: #0b0d0ed9;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+
+nav a {
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted-2);
+}
+
+nav a:hover {
+  color: var(--title);
+  background: var(--hover);
+  text-decoration: none;
+}
+
+header,
+section {
+  width: min(var(--maxw), 100% - 32px);
+  margin-inline: auto;
+}
+
+header {
+  padding: 56px 0 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+header img {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+}
+
+header h1 {
+  margin-bottom: 8px;
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  color: var(--title);
+}
+
+header p {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+header p:last-of-type,
+header p a {
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+header p a {
+  color: var(--text-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#clock {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-2);
+}
